@@ -155,7 +155,7 @@ export default function ProfileScreen() {
     </SafeAreaView>
   );
 }
-
+ 
 interface ProfileFieldProps {
   label: string;
   value: string;

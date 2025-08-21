@@ -34,7 +34,7 @@ export default function ScanScreen() {
     
     // Simulate API call to blockchain
     setTimeout(() => {
-      // Mock data - in a real app, this would be fetched from the blockchain
+      // Mock data - in the real app, this would be fetched from the ICP blockchain
       const mockHoneyData: HoneyData = {
         id: "NFT-32425",
         beekeeper: "John's Apiary",

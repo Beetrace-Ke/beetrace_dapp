@@ -84,7 +84,7 @@ export default function DiscoverScreen() {
   };
   
   const confirmInvestment = () => {
-    // In a real app, this would process the investment
+    //  this would process the investment
     setShowInvestModal(false);
   };
   

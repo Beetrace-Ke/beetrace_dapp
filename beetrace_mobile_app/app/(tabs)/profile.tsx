@@ -172,13 +172,13 @@ const ProfileField = ({ label, value, editing, onChangeText, keyboardType = 'def
       {icon && <View style={styles.fieldIcon}>{icon}</View>}
       {editing ? (
         <TextInput
-          style={[styles.fieldInput, icon && styles.fieldInputWithIcon]}
+          style={[styles.fieldInput, icon ? styles.fieldInputWithIcon : null]}
           value={value}
           onChangeText={onChangeText}
           keyboardType={keyboardType}
         />
       ) : (
-        <Text style={[styles.fieldValue, icon && styles.fieldValueWithIcon]}>{value}</Text>
+        <Text style={[styles.fieldValue, icon ? styles.fieldValueWithIcon : null]}>{value}</Text>
       )}
     </View>
   </View>

@@ -323,19 +323,25 @@ interface ProjectCardProps {
   onPress: () => void;
 }
 
-const ProjectCard = ({ title, beekeeper, funded, image, onPress }: ProjectCardProps) => (
-  <TouchableOpacity style={styles.projectCard} onPress={onPress}>
-    <Image source={{ uri: image }} style={styles.projectImage} />
-    <View style={styles.projectContent}>
-      <Text style={styles.projectTitle}>{title}</Text>
-      <Text style={styles.projectBeekeeper}>{beekeeper}</Text>
-      <View style={styles.projectFundedContainer}>
-        <View style={[styles.projectFundedBar, { width: funded }]} />
-        <Text style={styles.projectFundedText}>{funded} Funded</Text>
+const ProjectCard = ({ title, beekeeper, funded, image, onPress }: ProjectCardProps) => {
+  // Convert percentage string to proper width value
+  const fundedPercentage = parseFloat(funded.replace('%', ''));
+  const barWidth = `${fundedPercentage}%` as any;
+  
+  return (
+    <TouchableOpacity style={styles.projectCard} onPress={onPress}>
+      <Image source={{ uri: image }} style={styles.projectImage} />
+      <View style={styles.projectContent}>
+        <Text style={styles.projectTitle}>{title}</Text>
+        <Text style={styles.projectBeekeeper}>{beekeeper}</Text>
+        <View style={styles.projectFundedContainer}>
+          <View style={[styles.projectFundedBar, { width: barWidth }]} />
+          <Text style={styles.projectFundedText}>{funded} Funded</Text>
+        </View>
       </View>
-    </View>
-  </TouchableOpacity>
-);
+    </TouchableOpacity>
+  );
+};
 
 interface BeekeeperCardProps {
   name: string;
@@ -541,11 +547,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F0F0',
     borderRadius: 3,
     marginTop: 5,
+    position: 'relative',
   },
   projectFundedBar: {
     height: 6,
     backgroundColor: '#F9A826',
     borderRadius: 3,
+    position: 'absolute',
+    left: 0,
+    top: 0,
   },
   projectFundedText: {
     fontSize: 12,

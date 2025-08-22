@@ -131,7 +131,7 @@ interface InvestmentCardProps {
 }
 
 const InvestmentCard = ({ investment, onPress }: InvestmentCardProps) => {
-  const progressWidth = `${investment.progress}%`;
+  const progressWidth = `${investment.progress}%` as any;
   
   return (
     <TouchableOpacity style={styles.investmentCard} onPress={onPress}>
@@ -188,7 +188,7 @@ interface InvestmentDetailsModalProps {
 const InvestmentDetailsModal = ({ visible, investment, onClose }: InvestmentDetailsModalProps) => {
   if (!investment) return null;
   
-  const progressWidth = `${investment.progress}%`;
+  const progressWidth = `${investment.progress}%` as any;
   
   return (
     <Modal

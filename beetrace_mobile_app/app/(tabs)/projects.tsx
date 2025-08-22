@@ -144,7 +144,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, onPress }: ProjectCardProps) => {
   const progress = (project.raised / project.goal) * 100;
-  const progressWidth = `${progress}%`;
+  const progressWidth = `${progress}%` as any;
   
   return (
     <TouchableOpacity style={styles.projectCard} onPress={onPress}>
@@ -204,7 +204,7 @@ const ProjectDetailsModal = ({ visible, project, onClose }: ProjectDetailsModalP
   if (!project) return null;
   
   const progress = (project.raised / project.goal) * 100;
-  const progressWidth = `${progress}%`;
+  const progressWidth = `${progress}%` as any;
   
   return (
     <Modal

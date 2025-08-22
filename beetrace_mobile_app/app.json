@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "beetrace_dapp",
-    "slug": "beetrace_dapp",
+    "name": "Beetrace DApp",
+    "slug": "beetrace-dapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "beetrace-dapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
